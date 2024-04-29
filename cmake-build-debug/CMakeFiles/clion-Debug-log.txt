@@ -1,0 +1,8 @@
+"C:\Program Files\JetBrains\CLion 2024.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\kryst\CLionProjects\GRA -B C:\Users\kryst\CLionProjects\GRA\cmake-build-debug
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found SDL2: mingw32;-mwindows;C:/x86_64-w64-mingw32/lib/libSDL2main.a;C:/x86_64-w64-mingw32/lib/libSDL2.dll.a  
+-- Configuring done (1.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/kryst/CLionProjects/GRA/cmake-build-debug
