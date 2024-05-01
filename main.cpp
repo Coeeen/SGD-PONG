@@ -9,6 +9,9 @@ const int WIELKOSC_PILKI = 5;
 const int PREDKOSC_PILKI = 1;
 const int PREDKOSC_PALETEK = 1;
 
+ int WYNIK_PALETKA_PIERWSZA = 0;
+ int WYNIK_PALETKA_DRUGA = 0;
+
 int main(int argc, char* argv[]) {
 
     //PODŁĄCZENIE MODUŁÓW
@@ -132,7 +135,8 @@ int main(int argc, char* argv[]) {
         }
 
 
-        //KOLOROWANIE NA EKRANIE OBIEKTÓW + DETEKCJA KOLIZJI ODBICIA
+
+        //KOLOROWANIE NA EKRANIE OBIEKTÓW + DETEKCJA KOLIZJI ODBICIA + WYNIK
         paletkaPierwsza.move();
         paletkaDruga.move();
         pilka.move();
@@ -147,7 +151,14 @@ int main(int argc, char* argv[]) {
         }
 
 
-        if (pilka.pilka.x < 0 || pilka.pilka.x > SZEROKOSC_EKRANU) {
+        if (pilka.pilka.x < 0 ) {
+            WYNIK_PALETKA_PIERWSZA++;
+            std::cout << " Wynik: " << WYNIK_PALETKA_PIERWSZA << " : " << WYNIK_PALETKA_DRUGA << std::endl;
+            pilka.reset();
+        }
+        if(pilka.pilka.x > SZEROKOSC_EKRANU) {
+            WYNIK_PALETKA_DRUGA++;
+            std::cout << " Wynik: " << WYNIK_PALETKA_PIERWSZA << " : " << WYNIK_PALETKA_DRUGA << std::endl;
             pilka.reset();
         }
 
@@ -160,7 +171,7 @@ int main(int argc, char* argv[]) {
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderFillRect(renderer, &paletkaDruga.prostokat);
 
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
         SDL_RenderFillRect(renderer, &pilka.pilka);
 
         SDL_RenderPresent(renderer);
